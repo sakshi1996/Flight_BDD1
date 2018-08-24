@@ -1,5 +1,8 @@
 package StepDefinition;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +15,12 @@ import junit.framework.Assert;
 
 public class StepDefinition {
 	WebDriver driver;
+	
+	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+    Date date = new Date();  
+    String h = (formatter.format(date)).substring(12,14);
+    String m = (formatter.format(date)).substring(15,17);  
+    String t="kiran"+h+m+"@gmail.com";
 	
 	@Given("^Registration page should be available$")
 	public void registration_page_should_be_available() throws InterruptedException {
@@ -36,7 +45,7 @@ public class StepDefinition {
 		  Thread.sleep(3000);
 		  driver.findElement(By.name("gender")).sendKeys("F");
 		  Thread.sleep(3000);
-		  driver.findElement(By.name("emailAddress")).sendKeys("kiran2@gmail.com");
+		  driver.findElement(By.name("emailAddress")).sendKeys(t);
 		  Thread.sleep(3000);
 		  driver.findElement(By.name("password")).sendKeys("kiran1");
 		  Thread.sleep(3000);
@@ -73,7 +82,7 @@ public class StepDefinition {
 	public void validate_login_page() throws InterruptedException{
 		driver.findElement(By.linkText("Login")).click();
 		  Thread.sleep(3000);
-		  driver.findElement(By.name("email")).sendKeys("kiran2@gmail.com");
+		  driver.findElement(By.name("email")).sendKeys(t);
 		  Thread.sleep(3000);
 		  driver.findElement(By.name("password")).sendKeys("kiran1");
 		  Thread.sleep(3000);
