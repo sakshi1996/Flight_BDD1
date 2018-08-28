@@ -24,7 +24,7 @@ public class StepDefinition {
 	
 	@Given("^Registration page should be available$")
 	public void registration_page_should_be_available() throws InterruptedException {
-		System.setProperty("webdriver.gecko.driver", "E:\\Gecko\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 		  driver= new FirefoxDriver();
 		  Thread.sleep(5000);
 		  driver.get("http://localhost:8090/Demo-0.0.1-SNAPSHOT/homepage");
@@ -71,7 +71,7 @@ public class StepDefinition {
 
 	@Given("^Login page should be available$")
 	public void login_page_should_be_available() throws InterruptedException{
-		System.setProperty("webdriver.gecko.driver", "E:\\Gecko\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 		  driver= new FirefoxDriver();
 		  Thread.sleep(5000);
 		  driver.get("http://localhost:8090/Demo-0.0.1-SNAPSHOT/homepage");
